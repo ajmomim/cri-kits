@@ -1,0 +1,194 @@
+
+    body {
+         background-color: rgb(255, 255, 255);
+     }
+
+     header {
+         background-color: #313131;
+         color: #e7c1c1;
+         text-align: center;
+         position: sticky;
+         top: 0;
+         z-index: 1000;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     }
+
+     nav {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background-color: #333;
+     }
+
+     nav ul {
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+         display: flex;
+     }
+
+     nav ul li {
+         margin: 0 15px;
+         position: relative;
+     }
+
+     nav ul li a {
+         color: white;
+         text-decoration: none;
+         padding: 15px;
+         display: block;
+         transition: all 0.3s ease;
+         font-size: 16px;
+         font-weight: bold;
+         position: relative;
+     }
+
+     nav ul li a:hover {
+         color: #0affff;
+     }
+
+     nav ul li a::before, 
+     nav ul li a::after {
+         content: "";
+         position: absolute;
+         width: 100%;
+         height: 2px;
+         background-color: #d90000;
+         left: 0;
+         transition: all 0.3s ease;
+         transform: scaleX(0);
+     }
+
+     nav ul li a::before {
+         top: 0;
+         transform-origin: left;
+     }
+
+     nav ul li a::after {
+         bottom: 0;
+         transform-origin: right;
+     }
+
+     nav ul li a:hover::before,
+     nav ul li a:hover::after {
+         transform: scaleX(1);
+     }
+
+     .search-bar {
+         margin: 10px auto;
+         display: flex;
+         justify-content: center;
+     }
+
+     .search-bar input {
+         padding: 10px;
+         width: 300px;
+         border-radius: 20px;
+         border: 1px solid #ddd;
+         font-size: 16px;
+         outline: none;
+     }
+
+     .search-bar button {
+         padding: 10px 20px;
+         border-radius: 20px;
+         border: none;
+         background-color: #333;
+         color: white;
+         cursor: pointer;
+         margin-left: 10px;
+         transition: background-color 0.3s ease;
+     }
+
+     .search-bar button:hover {
+         background-color: #0affff;
+     }
+
+     .hidden {
+         display: none;
+     }
+
+     section {
+         padding: 20px;
+     }
+
+     .product {
+         border: 1px solid #ddd;
+         background-color: white;
+         margin: 10px;
+         padding: 15px;
+         display: inline-block;
+         text-align: center;
+         width: 200px;
+         height: 300px;
+         vertical-align: top;
+         position: relative;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         transition: box-shadow 0.3s ease;
+     }
+
+     .product:hover {
+         box-shadow: 0 8px 16px rgba(0, 0, 0, 1.2);
+     }
+
+     .product img {
+         width: 100%;
+         height: 150px;
+         object-fit: contain;
+         transition: transform 0.3s ease;
+     }
+
+     .product button {
+         border-radius: 20px;
+         padding: 10px 20px;
+         border: none;
+         background-color: #333;
+         color: white;
+         cursor: pointer;
+         transition: background-color 0.3s ease, transform 0.3s ease;
+         position: absolute;
+         bottom: 20px;
+         left: 50%;
+         transform: translateX(-50%);
+     }
+
+     .product:hover img {
+         transform: scale(1.1);
+     }
+
+     .product button:active {
+         background-color: #2cff10;
+     }
+    
+     footer {
+         background-color: #333;
+         color: white;
+         text-align: center;
+         padding: 10px;
+         width: 100%;
+         bottom: 0;
+     }
+
+     .Cart-button {
+         position: absolute;
+         top: 10px;
+         right: 10px;
+         z-index: 1000;
+     }
+
+     .Cart-button button {
+         background-color: #2cff10;
+         border: none;
+         color: white;
+         padding: 10px 20px;
+         font-size: 16px;
+         cursor: pointer;
+         border-radius: 20px;
+         transition: background-color 0.3s ease, transform 0.3s ease;
+     }
+
+     .Cart-button button:hover {
+         background-color: #24db41;
+         transform: scale(1.1);
+     }
+     

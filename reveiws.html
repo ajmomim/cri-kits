@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Reviews</title>
+    <link rel="stylesheet" href="reviews.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Product Reviews</h1>
+
+        <div class="review-form">
+            <h2>Leave a Review</h2>
+            <form id="reviewForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating" required>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Good</option>
+                    <option value="3">3 - Average</option>
+                    <option value="2">2 - Poor</option>
+                    <option value="1">1 - Terrible</option>
+                </select>
+
+                <label for="review">Review:</label>
+                <textarea id="review" name="review" rows="5" required></textarea>
+
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+
+        <div class="reviews">
+            <h2>Customer Reviews</h2>
+            <ul id="reviewList">
+                <h3>Ayaan Shaikh</h3>
+                <p>I ordered a MRF CRICKET BAT   from cri-kits last week, and I was amazed at how quickly it arrived. The packaging was secure, ensuring the item was undamaged. The customer service was exceptional, as they kept me updated throughout the entire process. I had a question about the product, and their support team responded promptly and professionally. Overall, my experience with cri-kits was outstanding, and I can’t wait for my next purchase.</p>
+                <h3>Misbah Ansari</h3>
+                <p>I recently discovered cri-kits while searching for a specific SS BAT and SG BALL. Not only did they have the item I was looking for, but their selection was vast, and the prices were competitive. The website was easy to navigate, and the product descriptions were informative and accurate. I was pleasantly surprised by the fast shipping and the care they took in packaging my order. I’m thrilled with my purchase and will continue to shop at cri-kits for all my Cricket products needs.</p>
+            
+            </ul>
+        </div>
+    </div>
+
+    <script src="reviews.js"></script>
+</body>
+</html>

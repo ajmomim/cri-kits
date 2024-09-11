@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .settings-container {
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .settings-section h2 {
+            margin: 0;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .settings-section h2:hover {
+            background-color: #0056b3;
+        }
+
+        .section-content {
+            display: none;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .section-content label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .section-content input[type="text"],
+        .section-content input[type="email"],
+        .section-content input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .section-content input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px; /* Adds a gap between the buttons */
+        }
+
+        button {
+            flex: 1; /* Ensure buttons take up equal width */
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .button-grow {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="settings-container">
+        <h1>Settings</h1>
+        
+        <div class="settings-section" id="profile-settings">
+            <h2 onclick="toggleSection('profile-settings')">Profile Settings</h2>
+            <div class="section-content">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+
+                <label for="profile-picture">Profile Picture</label>
+                <input type="file" id="profile-picture">
+            </div>
+        </div>
+
+        <div class="settings-section" id="notification-settings">
+            <h2 onclick="toggleSection('notification-settings')">Notification Settings</h2>
+            <div class="section-content">
+                <label for="email-notifications">Email Notifications</label>
+                <input type="checkbox" id="email-notifications" checked>
+
+                <label for="sms-notifications">SMS Notifications</label>
+                <input type="checkbox" id="sms-notifications">
+            </div>
+        </div>
+
+        <div class="settings-section" id="security-settings">
+            <h2 onclick="toggleSection('security-settings')">Security Settings</h2>
+            <div class="section-content">
+                <label for="current-password">Current Password</label>
+                <input type="password" id="current-password" placeholder="Enter current password">
+
+                <label for="new-password">New Password</label>
+                <input type="password" id="new-password" placeholder="Enter new password">
+
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm new password">
+            </div>
+        </div>
+
+        <!-- Button Container with two buttons -->
+        <div class="button-container">
+            <button onclick="clickButton(this)">Save Settings</button>
+            <button onclick="clickButton(this)">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const content = section.querySelector('.section-content');
+            content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
+        }
+
+        function clickButton(button) {
+            // Add the grow class to the button when clicked
+            button.classList.add('button-grow');
+
+            // Remove the class after a short delay
+            setTimeout(function() {
+                button.classList.remove('button-grow');
+            }, 200); // Adjust the delay as needed
+        }
+    </script>
+</body>
+</html>
