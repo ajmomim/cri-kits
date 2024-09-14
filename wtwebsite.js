@@ -22,7 +22,7 @@ function getQueryParams() {
 }
 
 
-// main.js
+
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function addToCart(productName, price) {
