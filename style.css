@@ -1,34 +1,131 @@
 
     body {
-         background-color: rgb(255, 255, 255);
+         background-color: rgb(255, 252, 188);
      }
 
      header {
-         background-color: #313131;
-         color: #e7c1c1;
-         text-align: center;
-         position: sticky;
-         top: 0;
-         z-index: 1000;
-         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-     }
-
-    .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
+        position: relative;
+        width: 100%;
+        height: 500px; /* Adjusted header height */
+        overflow: hidden;
     }
-
-
+    
+    .video-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+    
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay for better text readability */
+    }
+    
+    .header-content {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+    }
+    
+    .header-content h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+    
+    .header-content p {
+        font-size: 1.5rem;
+    }
+    
+    .content {
+        position: absolute;
+        top: 70%; /* Adjusted for better button placement */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 3;
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 15px 25px;
+        margin: 10px;
+        font-size: 18px;
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 2px solid #fff;
+        border-radius: 25px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .btn:hover {
+        background-color: rgba(205, 115, 115, 0.134);
+    }
+    
+    
+    h1{
+        color:white
+    }
+    
+    .video-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+    
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); 
+    }
      nav {
          display: flex;
          justify-content: center;
          align-items: center;
-         background-color: #333;
+         
      }
 
      nav ul {
-         list-style-type: none;
+         list-style-type:disc;
          margin: 0;
          padding: 0;
          display: flex;
@@ -126,8 +223,8 @@
          padding: 15px;
          display: inline-block;
          text-align: center;
-         width: 500px;
-         height: 600px;
+         width: 200px;
+         height: 300px;
          vertical-align: top;
          position: relative;
          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -158,6 +255,7 @@
          left: 50%;
          transform: translateX(-50%);
      }
+     
 
      .product:hover img {
          transform: scale(1.1);
@@ -176,109 +274,48 @@
          bottom: 0;
      }
 
-    /* Basic styles for the cart */
-    #cart-icon {
-        font-size: 20px;
-        cursor: pointer;
-        margin-right: 20px;
-        float: right;
-    }
+     .Cart-button {
+         position: absolute;
+         top: 10px;
+         right: 10px;
+         z-index: 1000;
+     }
 
-    #cart {
-        border: 1px solid #ccc;
-        padding: 20px;
-        background-color: #f9f9f9;
-        width: 300px;
-        position: absolute;
-        right: 20px;
-        top: 100px;
-    }
-    
-    .product {
+     .Cart-button button {
+         background-color: #2cff10;
+         border: none;
+         color: white;
+         padding: 10px 20px;
+         font-size: 16px;
+         cursor: pointer;
+         border-radius: 20px;
+         transition: background-color 0.3s ease, transform 0.3s ease;
+     }
+
+     .Cart-button button:hover {
+         background-color: #24db41;
+         transform: scale(1.1);
+     }
+     .cart-item {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
     }
     
-    button {
-        padding: 10px 20px;
-        margin-top: 10px;
-        cursor: pointer;
+    .cart-item p {
+        margin: 0;
     }
-    /* Default (desktop) styles */
-
-/* Adjustments for screens smaller than 600px */
-@media screen and (max-width: 600px) {
-    .container {
-        width: 100%;
-        padding: 10px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .product img {
-        width: 100%;
-    }
-
-    .search-bar input {
-        width: 80%;
-    }
-
-    .search-bar button {
-        width: 100%;
-    }
-}
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.product {
-    flex: 1 1 calc(33.333% - 20px); /* Adjust for mobile */
-    margin: 10px;
-}
-
-@media screen and (max-width: 600px) {
-    .product {
-        flex: 1 1 100%; /* Full width on small screens */
-    }
-}
-img {
-    max-width: 100%;
-    height: auto;
-}
-#nav-menu {
-    display: none;
-    list-style: none;
-    padding: 0;
-}
-
-/* Show menu on button click */
-#nav-menu.show {
-    display: block;
-}
-
-/* Default style for large screens */
-@media (min-width: 600px) {
-    #nav-menu {
+    @media (max-width: 768px) {
+        /* Styles for mobile screens */
+        .container {
+          width: 100%;
+          padding: 10px;
+        }
+      }
+      .flex-container {
         display: flex;
-    }
-
-    .hamburger {
-        display: none;
-    }
-}
-button, a {
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 1.2rem;
-}
-.fullscreen {
-    height: 100vh;
-    width: 100vw;
-}
+        flex-wrap: wrap;
+      }
+     
